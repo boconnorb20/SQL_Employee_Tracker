@@ -10,7 +10,7 @@ const connectionProperties = {
     port: 3306,
     user: "root",
     password: "PatsTT",
-    database: "employee_DB"
+    database: "employee_db"
 }
 
 

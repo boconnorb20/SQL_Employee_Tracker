@@ -2,7 +2,7 @@
 const mysql2 = require("mysql2");
 const inquirer = require("inquirer");
 const consoleTable = require("console.table");
-const promisemysql2 = require("promise-mysql");
+
 
 // Connection Properties
 const connectionProperties = {
@@ -10,7 +10,7 @@ const connectionProperties = {
     port: 3306,
     user: "root",
     password: "PatsTT",
-    database: "employees_DB"
+    database: "employee_DB"
 }
 
 
@@ -133,8 +133,8 @@ function viewAllEmp(){
 function viewAllEmpByDept(){
     // Array to department names
     let deptArr = [];
-     // Trying new connection using promise-sql
-     promisemysql.createConnection(connectionProperties
+     // Trying new connection using mysql
+     mysql.createConnection(connectionProperties
         ).then((conn) => {
               // Query to see names of departments
         return conn.query('SELECT name FROM department');
@@ -177,8 +177,8 @@ function viewAllEmpByRole(){
     // Array to store all roles
     let roleArr = [];
 
-    // Create connection using promise-sql "trying"
-    promisemysql2.createConnection(connectionProperties)
+    // Create connection using mysql
+    mysql2.createConnection(connectionProperties)
     .then((conn) => {
 
         // Query all the roles
@@ -222,7 +222,7 @@ function addEmp(){
     let managerArr = [];
 
     // Connection using promise-sql
-    promisemysql2.createConnection(connectionProperties
+    mysql2.createConnection(connectionProperties
         ).then((conn) => {
     
             // Query  all roles and all manager. Pass as a promise
@@ -334,8 +334,8 @@ function addRole(){
     // Array of departments
     let departmentArr = [];
 
-    // Connection using promise-sql
-    promisemysql2.createConnection(connectionProperties)
+    // Connection using mysql
+    mysql2.createConnection(connectionProperties)
     .then((conn) => {
 
         return conn.query('SELECT id, name FROM department ORDER BY name ASC');
@@ -425,8 +425,8 @@ function updateEmpRole(){
     let employeeArr = [];
     let roleArr = [];
 
-    // Creation and connection using promise-sql
-    promisemysql2.createConnection(connectionProperties
+    // Creation and connection using mysql
+    mysql2.createConnection(connectionProperties
     ).then((conn) => {
         return Promise.all([
 
@@ -503,8 +503,8 @@ function updateEmpMngr(){
 
     let employeeArr = [];
 
-    // Create connection using promise-sql
-    promisemysql2.createConnection(connectionProperties
+    // Create connection using mysql
+    mysql2.createConnection(connectionProperties
     ).then((conn) => {
 
         // A query for all employees
@@ -574,8 +574,8 @@ function viewAllEmpByMngr(){
 
     let managerArr = [];
 
-    // Connection using promise-sql
-    promisemysql2.createConnection(connectionProperties)
+    // Connection using mysql
+    mysql2.createConnection(connectionProperties)
     .then((conn) => {
 
        
@@ -643,8 +643,8 @@ function deleteRole(){
    
     let roleArr = [];
 
-    // Create connection using promise-sql
-    promisemysql2.createConnection(connectionProperties
+    // Create connection using mysql
+    mysql2.createConnection(connectionProperties
     ).then((conn) => {
 
         // A query all roles
@@ -726,8 +726,8 @@ function deleteEmp(){
     
     let employeeArr = [];
 
-    // Creating a connection using promise-sql
-    promisemysql2.createConnection(connectionProperties
+    // Creating a connection using promisesql
+    mysql2.createConnection(connectionProperties
     ).then((conn) => {
 
         // A Query all employees

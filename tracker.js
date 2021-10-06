@@ -1,8 +1,7 @@
 // Getting dependancies
-const mysql2 = require("mysql2");
+const mysql = require("mysql");
 const inquirer = require("inquirer");
 const consoleTable = require("console.table");
-
 
 // Connection Properties
 const connectionProperties = {
@@ -15,7 +14,7 @@ const connectionProperties = {
 
 
 // Creating Connection to mysql
-const connection = mysql2.createConnection(connectionProperties);
+const connection = mysql.createConnection(connectionProperties);
 
 
 // Setting up the connection to the database

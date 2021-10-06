@@ -2,46 +2,46 @@ USE employee_DB;
 
 ----- Department -----
 
-INSERT INTO department_id (id, name)
+INSERT INTO department (id, name)
 VALUES (1, "IT");
 
-INSERT INTO department_id (id, name)
+INSERT INTO department (id, name)
 VALUES (2, "HR");
 
-INSERT INTO department_id (id, name)
+INSERT INTO department (id, name)
 VALUES (3, "Engineering");
 
-INSERT INTO department_id (id, name)
+INSERT INTO department (id, name)
 VALUES (4, "Marketing");
 
 
 ----- Rolls -----
 
-INSERT INTO role (id, title, salary, department_id)
+INSERT INTO employeeRole (id, title, salary, department)
 VALUES (1, "IT Level 1", 60000, 1);
 
-INSERT INTO role (id, title, salary, department_id)
+INSERT INTO employeeRole (id, title, salary, department)
 VALUES (2, "IT Level 2", 80000, 1);
 
-INSERT INTO role (id, title, salary, department_id)
+INSERT INTO employeeRole (id, title, salary, department)
 VALUES (3, "IT Manager", 110000, 1);
 
-INSERT INTO role (id, title, salary, department_id)
+INSERT INTO employeeRole (id, title, salary, department)
 VALUES (4, "Jr Programmer", 70000, 3);
 
-INSERT INTO role (id, title, salary, department_id)
+INSERT INTO employeeRole (id, title, salary, department)
 VALUES (5, "Sr Developer Manager", 120000, 3);
 
-INSERT INTO role (id, title, salary, department_id)
+INSERT INTO employeeRole (id, title, salary, department)
 VALUES (6, "HR Staff", 55000, 2);
 
-INSERT INTO role (id, title, salary, department_id)
+INSERT INTO employeeRole (id, title, salary, department)
 VALUES (7, "HR Manager", 85000, 2);
 
-INSERT INTO role (id, title, salary, department_id)
+INSERT INTO employeeRole (id, title, salary, department)
 VALUES (8, "Marketing Staff", 65000, 4);
 
-INSERT INTO role (id, title, salary, department_id)
+INSERT INTO employeeRole (id, title, salary, department)
 VALUES (9, "Marketing Manager", 4);
 
 

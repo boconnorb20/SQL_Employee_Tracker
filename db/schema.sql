@@ -12,7 +12,7 @@ CREATE TABLE department (
 );
 
 ----- Create the Role Table -----
-CREATE TABLE role (
+CREATE TABLE employeeRole (
     id INT NOT NULL AUTO_INCREMENT,
     title VARCHAR(30) NOT NULL,
     department_id INT NOT NULL,
@@ -32,4 +32,9 @@ CREATE TABLE employee (
     FOREIGN KEY (role_id) REFERENCES role(id),
     FOREIGN KEY (manager_id) REFERENCES employee(id)
 );
+
+SELECT * FROM department;
+SELECT * FROM employeeRole;
+SELECT * FROM employee;
+
 

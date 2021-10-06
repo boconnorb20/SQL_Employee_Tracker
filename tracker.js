@@ -1,35 +1,21 @@
 // Getting dependancies
-const mysql = require("mysql");
+const connection = require("../config/connection");
+const mysql = require("mysql2");
 const inquirer = require("inquirer");
 const consoleTable = require("console.table");
 
-// Connection Properties
-const connectionProperties = {
-    host: "localhost",
-    port: 3306,
-    user: "root",
-    password: "PatsTT",
-    database: "employee_DB"
-}
 
 
-// Creating Connection to mysql
-const connection = mysql.createConnection(connectionProperties);
+const init = () => {
+    fireUp()
+};
+
+function fireUp() {
+    console.log ("The Employee Tracker")
+    inquirer .prompt([
+   {     
 
 
-// Setting up the connection to the database
-connection.connect((err) => {
-    if (err) throw err;
-
-
-    console.log("SQL EMPLOYEE TRACKER"); mainMenu();
-});
-
-// Main menu function
-function mainMenu(){
-
-    // Prompt user to choose an option
-    inquirer .prompt({
       name: "action",
       type: "list",
       message: "MAIN MENU",
@@ -48,9 +34,9 @@ function mainMenu(){
         "Delete role",
         "Delete department"
       ]
-    })
+    },
 
-    .then((answer) => {
+]).then((answer) => {
 
         // Use of a Switch case, depending on users options selected
         switch (answer.action) {
@@ -220,7 +206,6 @@ function addEmp(){
     let roleArr = [];
     let managerArr = [];
 
-    // Connection using promise-sql
     mysql2.createConnection(connectionProperties
         ).then((conn) => {
     
@@ -725,7 +710,7 @@ function deleteEmp(){
     
     let employeeArr = [];
 
-    // Creating a connection using promisesql
+   
     mysql2.createConnection(connectionProperties
     ).then((conn) => {
 
@@ -786,3 +771,5 @@ function deleteEmp(){
             });
     });
 }
+
+init();

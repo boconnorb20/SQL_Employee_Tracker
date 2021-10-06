@@ -5,10 +5,8 @@
   "dependencies": {
     "console.table": "^0.10.0",
     "inquirer": "^8.1.2",
-    "mysql-promise": "^5.0.0",
-    "mysql2": "^2.2.5"
+    "mysql2": "^2.3.0"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node tracker.js"
